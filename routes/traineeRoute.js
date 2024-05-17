@@ -1,10 +1,11 @@
 const express = require('express');
-const courseController = require("../controllers/traineeController")
+const traineeController = require("../controllers/traineeController")
 const router = express.Router();
 
-router.get("/", courseController.getAllTrainees);
-router.post("/", courseController.saveTrainee);
-router.put("/:id", courseController.updateTrainee);
-router.delete("/:id", courseController.deleteTrainee);
+router.get("/", traineeController.getAllTrainees);
+router.get("/:id", traineeController.getOneTrainee);
+router.post("/", traineeController.saveTrainee);
+router.put("/:id", traineeController.updateTrainee);
+router.delete("/:id", traineeController.deleteTrainee);
 
 module.exports = router;

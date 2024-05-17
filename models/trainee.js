@@ -13,7 +13,7 @@ const traineeSchema = Schema(
     gender: {
       type: String,
       required: true,
-      enum: ["Male", "Female", "Unknown"],
+      enum: ["Nam", "Nữ", "Không rõ"],
     },
     school: {
       type: String,
