@@ -15,6 +15,19 @@ const getAllTrainees = async (req, res) => {
   }
 };
 
+//get a trainee
+const getOneTrainee = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const trainee = await Trainee.findById(id);
+
+      return res.status(200).json(trainee);
+  } catch (error) {
+      console.log(error.message);
+      res.status(500).send({ message: error.message });
+  }
+};
+
 // add a trainee
 const saveTrainee = async (req, res) => {
   try {
@@ -46,25 +59,25 @@ const saveTrainee = async (req, res) => {
 // update a trainee information
 const updateTrainee = async (req, res) => {
   try {
-    if (
-      !req.body.name ||
-      !req.body.email ||
-      !req.body.gender ||
-      !req.body.school
-    ) {
+    const { id } = req.params;
+    const updateData = req.body;
+
+    if (Object.keys(updateData).length === 0) {
       return res.status(400).send({
-        message: "Send all required fileds",
+        message: "No update data provided",
       });
     }
 
-    const { id } = req.params;
-    const result = await Trainee.findByIdAndUpdate(id, req.body);
+    const result = await Trainee.findByIdAndUpdate(id, updateData, {
+      new: true, 
+      runValidators: true, 
+    });
 
     if (!result) {
       return res.status(404).json({ message: "Trainee not found" });
     }
 
-    return res.status(200).send({ message: "Trainee updated successfully" });
+    return res.status(200).send({ message: "Trainee updated successfully", data: result });
   } catch (error) {
     console.log(error.message);
     res.status(500).send({ message: error.message });
@@ -88,4 +101,4 @@ const deleteTrainee = async (req, res) => {
   }
 };
 
-module.exports = { getAllTrainees, saveTrainee, updateTrainee, deleteTrainee };
+module.exports = { getAllTrainees, getOneTrainee, saveTrainee, updateTrainee, deleteTrainee };
