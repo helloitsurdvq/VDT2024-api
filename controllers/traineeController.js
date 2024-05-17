@@ -21,6 +21,10 @@ const getOneTrainee = async (req, res) => {
       const { id } = req.params;
       const trainee = await Trainee.findById(id);
 
+      if (!trainee) {
+        return res.status(404).json({ message: "Trainee not found" });
+      }
+      
       return res.status(200).json(trainee);
   } catch (error) {
       console.log(error.message);
