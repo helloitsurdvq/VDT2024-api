@@ -1,7 +1,7 @@
-FROM python:3.9
+FROM node:18-alpine
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY package*.json ./
+RUN npm install
 COPY . .
-EXPOSE 5000
-CMD ["flask", "--app", "src", "run", "--host=0.0.0.0"]
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
