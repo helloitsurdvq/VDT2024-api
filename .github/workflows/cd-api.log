@@ -1,0 +1,798 @@
+2024-06-07T16:47:02.3597072Z Current runner version: '2.317.0'
+2024-06-07T16:47:02.3621191Z ##[group]Operating System
+2024-06-07T16:47:02.3621949Z Ubuntu
+2024-06-07T16:47:02.3622348Z 22.04.4
+2024-06-07T16:47:02.3622683Z LTS
+2024-06-07T16:47:02.3623125Z ##[endgroup]
+2024-06-07T16:47:02.3623584Z ##[group]Runner Image
+2024-06-07T16:47:02.3623997Z Image: ubuntu-22.04
+2024-06-07T16:47:02.3624515Z Version: 20240603.1.0
+2024-06-07T16:47:02.3625527Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240603.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-06-07T16:47:02.3627125Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240603.1
+2024-06-07T16:47:02.3628039Z ##[endgroup]
+2024-06-07T16:47:02.3628418Z ##[group]Runner Image Provisioner
+2024-06-07T16:47:02.3629007Z 2.0.370.1
+2024-06-07T16:47:02.3629378Z ##[endgroup]
+2024-06-07T16:47:02.3630384Z ##[group]GITHUB_TOKEN Permissions
+2024-06-07T16:47:02.3632080Z Contents: read
+2024-06-07T16:47:02.3632517Z Metadata: read
+2024-06-07T16:47:02.3633239Z Packages: read
+2024-06-07T16:47:02.3633727Z ##[endgroup]
+2024-06-07T16:47:02.3637275Z Secret source: Actions
+2024-06-07T16:47:02.3637893Z Prepare workflow directory
+2024-06-07T16:47:02.4275391Z Prepare all required actions
+2024-06-07T16:47:02.4452966Z Getting action download info
+2024-06-07T16:47:02.6324824Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2024-06-07T16:47:02.7433197Z Download action repository 'docker/login-action@v2' (SHA:465a07811f14bebb1938fbed4728c6a1ff8901fc)
+2024-06-07T16:47:02.9932908Z Download action repository 'docker/setup-buildx-action@v2' (SHA:885d1462b80bc1c1c7f0b00334ad271f09369c55)
+2024-06-07T16:47:03.2717137Z Download action repository 'docker/metadata-action@v4' (SHA:818d4b7b91585d195f67373fd9cb0332e31a7175)
+2024-06-07T16:47:03.5066229Z Download action repository 'docker/build-push-action@v4' (SHA:0a97817b6ade9f46837855d676c4cca3a2471fc9)
+2024-06-07T16:47:03.8574437Z Complete job name: docker
+2024-06-07T16:47:03.9476517Z ##[group]Run actions/checkout@v3
+2024-06-07T16:47:03.9476967Z with:
+2024-06-07T16:47:03.9477352Z   repository: ***/VDT2024-api
+2024-06-07T16:47:03.9477838Z   token: ***
+2024-06-07T16:47:03.9478085Z   ssh-strict: true
+2024-06-07T16:47:03.9478356Z   persist-credentials: true
+2024-06-07T16:47:03.9478645Z   clean: true
+2024-06-07T16:47:03.9478905Z   sparse-checkout-cone-mode: true
+2024-06-07T16:47:03.9479224Z   fetch-depth: 1
+2024-06-07T16:47:03.9479464Z   fetch-tags: false
+2024-06-07T16:47:03.9479716Z   lfs: false
+2024-06-07T16:47:03.9479953Z   submodules: false
+2024-06-07T16:47:03.9480212Z   set-safe-directory: true
+2024-06-07T16:47:03.9480490Z ##[endgroup]
+2024-06-07T16:47:04.1555799Z Syncing repository: ***/VDT2024-api
+2024-06-07T16:47:04.1558417Z ##[group]Getting Git version info
+2024-06-07T16:47:04.1559707Z Working directory is '/home/runner/work/VDT2024-api/VDT2024-api'
+2024-06-07T16:47:04.1561059Z [command]/usr/bin/git version
+2024-06-07T16:47:04.1561632Z git version 2.45.2
+2024-06-07T16:47:04.1572273Z ##[endgroup]
+2024-06-07T16:47:04.1591755Z Temporarily overriding HOME='/home/runner/work/_temp/a9694bf6-9af6-4c31-9d17-9f94cb42a7ce' before making global git config changes
+2024-06-07T16:47:04.1593553Z Adding repository directory to the temporary git global config as a safe directory
+2024-06-07T16:47:04.1597498Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VDT2024-api/VDT2024-api
+2024-06-07T16:47:04.1644579Z Deleting the contents of '/home/runner/work/VDT2024-api/VDT2024-api'
+2024-06-07T16:47:04.1648246Z ##[group]Initializing the repository
+2024-06-07T16:47:04.1651772Z [command]/usr/bin/git init /home/runner/work/VDT2024-api/VDT2024-api
+2024-06-07T16:47:04.1743779Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-06-07T16:47:04.1745357Z hint: is subject to change. To configure the initial branch name to use in all
+2024-06-07T16:47:04.1746622Z hint: of your new repositories, which will suppress this warning, call:
+2024-06-07T16:47:04.1747534Z hint:
+2024-06-07T16:47:04.1748740Z hint: 	git config --global init.defaultBranch <name>
+2024-06-07T16:47:04.1749460Z hint:
+2024-06-07T16:47:04.1750292Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-06-07T16:47:04.1751703Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-06-07T16:47:04.1752595Z hint:
+2024-06-07T16:47:04.1753124Z hint: 	git branch -m <name>
+2024-06-07T16:47:04.1754218Z Initialized empty Git repository in /home/runner/work/VDT2024-api/VDT2024-api/.git/
+2024-06-07T16:47:04.1761192Z [command]/usr/bin/git remote add origin https://github.com/***/VDT2024-api
+2024-06-07T16:47:04.1805133Z ##[endgroup]
+2024-06-07T16:47:04.1806053Z ##[group]Disabling automatic garbage collection
+2024-06-07T16:47:04.1809714Z [command]/usr/bin/git config --local gc.auto 0
+2024-06-07T16:47:04.1849569Z ##[endgroup]
+2024-06-07T16:47:04.1851659Z ##[group]Setting up auth
+2024-06-07T16:47:04.1857751Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-06-07T16:47:04.1897075Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-06-07T16:47:04.2217126Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-06-07T16:47:04.2257027Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-06-07T16:47:04.2513033Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-06-07T16:47:04.2557926Z ##[endgroup]
+2024-06-07T16:47:04.2558858Z ##[group]Fetching the repository
+2024-06-07T16:47:04.2568366Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +2b35dfbbe17e697d773986f92522a663c72ac981:refs/tags/v1.0.0
+2024-06-07T16:47:04.4779635Z remote: Enumerating objects: 28, done.        
+2024-06-07T16:47:04.4780742Z remote: Counting objects:   3% (1/28)        
+2024-06-07T16:47:04.4781915Z remote: Counting objects:   7% (2/28)        
+2024-06-07T16:47:04.4782724Z remote: Counting objects:  10% (3/28)        
+2024-06-07T16:47:04.4783480Z remote: Counting objects:  14% (4/28)        
+2024-06-07T16:47:04.4784230Z remote: Counting objects:  17% (5/28)        
+2024-06-07T16:47:04.4784981Z remote: Counting objects:  21% (6/28)        
+2024-06-07T16:47:04.4785933Z remote: Counting objects:  25% (7/28)        
+2024-06-07T16:47:04.4786663Z remote: Counting objects:  28% (8/28)        
+2024-06-07T16:47:04.4787382Z remote: Counting objects:  32% (9/28)        
+2024-06-07T16:47:04.4788309Z remote: Counting objects:  35% (10/28)        
+2024-06-07T16:47:04.4789089Z remote: Counting objects:  39% (11/28)        
+2024-06-07T16:47:04.4789881Z remote: Counting objects:  42% (12/28)        
+2024-06-07T16:47:04.4790644Z remote: Counting objects:  46% (13/28)        
+2024-06-07T16:47:04.4791404Z remote: Counting objects:  50% (14/28)        
+2024-06-07T16:47:04.4792166Z remote: Counting objects:  53% (15/28)        
+2024-06-07T16:47:04.4792831Z remote: Counting objects:  57% (16/28)        
+2024-06-07T16:47:04.4793480Z remote: Counting objects:  60% (17/28)        
+2024-06-07T16:47:04.4794122Z remote: Counting objects:  64% (18/28)        
+2024-06-07T16:47:04.4794790Z remote: Counting objects:  67% (19/28)        
+2024-06-07T16:47:04.4795450Z remote: Counting objects:  71% (20/28)        
+2024-06-07T16:47:04.4796327Z remote: Counting objects:  75% (21/28)        
+2024-06-07T16:47:04.4796997Z remote: Counting objects:  78% (22/28)        
+2024-06-07T16:47:04.4797695Z remote: Counting objects:  82% (23/28)        
+2024-06-07T16:47:04.4798715Z remote: Counting objects:  85% (24/28)        
+2024-06-07T16:47:04.4799614Z remote: Counting objects:  89% (25/28)        
+2024-06-07T16:47:04.4800403Z remote: Counting objects:  92% (26/28)        
+2024-06-07T16:47:04.4801857Z remote: Counting objects:  96% (27/28)        
+2024-06-07T16:47:04.4802542Z remote: Counting objects: 100% (28/28)        
+2024-06-07T16:47:04.4803259Z remote: Counting objects: 100% (28/28), done.        
+2024-06-07T16:47:04.4804001Z remote: Compressing objects:   4% (1/21)        
+2024-06-07T16:47:04.4804698Z remote: Compressing objects:   9% (2/21)        
+2024-06-07T16:47:04.4805397Z remote: Compressing objects:  14% (3/21)        
+2024-06-07T16:47:04.4806093Z remote: Compressing objects:  19% (4/21)        
+2024-06-07T16:47:04.4806779Z remote: Compressing objects:  23% (5/21)        
+2024-06-07T16:47:04.4807503Z remote: Compressing objects:  28% (6/21)        
+2024-06-07T16:47:04.4808194Z remote: Compressing objects:  33% (7/21)        
+2024-06-07T16:47:04.4808882Z remote: Compressing objects:  38% (8/21)        
+2024-06-07T16:47:04.4809567Z remote: Compressing objects:  42% (9/21)        
+2024-06-07T16:47:04.4810278Z remote: Compressing objects:  47% (10/21)        
+2024-06-07T16:47:04.4810998Z remote: Compressing objects:  52% (11/21)        
+2024-06-07T16:47:04.4811700Z remote: Compressing objects:  57% (12/21)        
+2024-06-07T16:47:04.4812391Z remote: Compressing objects:  61% (13/21)        
+2024-06-07T16:47:04.4813075Z remote: Compressing objects:  66% (14/21)        
+2024-06-07T16:47:04.4813779Z remote: Compressing objects:  71% (15/21)        
+2024-06-07T16:47:04.4814470Z remote: Compressing objects:  76% (16/21)        
+2024-06-07T16:47:04.4815160Z remote: Compressing objects:  80% (17/21)        
+2024-06-07T16:47:04.4815847Z remote: Compressing objects:  85% (18/21)        
+2024-06-07T16:47:04.4816533Z remote: Compressing objects:  90% (19/21)        
+2024-06-07T16:47:04.4821816Z remote: Compressing objects:  95% (20/21)        
+2024-06-07T16:47:04.4822581Z remote: Compressing objects: 100% (21/21)        
+2024-06-07T16:47:04.4823353Z remote: Compressing objects: 100% (21/21), done.        
+2024-06-07T16:47:04.4876054Z remote: Total 28 (delta 0), reused 14 (delta 0), pack-reused 0        
+2024-06-07T16:47:04.4970696Z From https://github.com/***/VDT2024-api
+2024-06-07T16:47:04.4971513Z  * [new ref]         2b35dfbbe17e697d773986f92522a663c72ac981 -> v1.0.0
+2024-06-07T16:47:04.4996742Z ##[endgroup]
+2024-06-07T16:47:04.4997415Z ##[group]Determining the checkout info
+2024-06-07T16:47:04.5000213Z ##[endgroup]
+2024-06-07T16:47:04.5001087Z ##[group]Checking out the ref
+2024-06-07T16:47:04.5005988Z [command]/usr/bin/git checkout --progress --force refs/tags/v1.0.0
+2024-06-07T16:47:04.5079348Z Note: switching to 'refs/tags/v1.0.0'.
+2024-06-07T16:47:04.5079916Z 
+2024-06-07T16:47:04.5080526Z You are in 'detached HEAD' state. You can look around, make experimental
+2024-06-07T16:47:04.5081556Z changes and commit them, and you can discard any commits you make in this
+2024-06-07T16:47:04.5082221Z state without impacting any branches by switching back to a branch.
+2024-06-07T16:47:04.5082608Z 
+2024-06-07T16:47:04.5082901Z If you want to create a new branch to retain commits you create, you may
+2024-06-07T16:47:04.5083826Z do so (now or later) by using -c with the switch command. Example:
+2024-06-07T16:47:04.5084190Z 
+2024-06-07T16:47:04.5084446Z   git switch -c <new-branch-name>
+2024-06-07T16:47:04.5084850Z 
+2024-06-07T16:47:04.5085041Z Or undo this operation with:
+2024-06-07T16:47:04.5085389Z 
+2024-06-07T16:47:04.5085537Z   git switch -
+2024-06-07T16:47:04.5085799Z 
+2024-06-07T16:47:04.5086107Z Turn off this advice by setting config variable advice.detachedHead to false
+2024-06-07T16:47:04.5086519Z 
+2024-06-07T16:47:04.5086686Z HEAD is now at 2b35dfb :sparkles: test api cd
+2024-06-07T16:47:04.5087876Z ##[endgroup]
+2024-06-07T16:47:04.5133263Z [command]/usr/bin/git log -1 --format='%H'
+2024-06-07T16:47:04.5167794Z '2b35dfbbe17e697d773986f92522a663c72ac981'
+2024-06-07T16:47:04.5479537Z ##[group]Run docker/login-action@v2
+2024-06-07T16:47:04.5480341Z with:
+2024-06-07T16:47:04.5481137Z   username: ***
+2024-06-07T16:47:04.5481907Z   password: ***
+2024-06-07T16:47:04.5482644Z   ecr: auto
+2024-06-07T16:47:04.5483564Z   logout: true
+2024-06-07T16:47:04.5484083Z ##[endgroup]
+2024-06-07T16:47:04.6632687Z Logging into Docker Hub...
+2024-06-07T16:47:04.9905879Z Login Succeeded!
+2024-06-07T16:47:05.0023793Z ##[group]Run docker/setup-buildx-action@v2
+2024-06-07T16:47:05.0024279Z with:
+2024-06-07T16:47:05.0024657Z   driver: docker-container
+2024-06-07T16:47:05.0025403Z   buildkitd-flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+2024-06-07T16:47:05.0026144Z   install: false
+2024-06-07T16:47:05.0026582Z   use: true
+2024-06-07T16:47:05.0026899Z   cleanup: true
+2024-06-07T16:47:05.0027192Z ##[endgroup]
+2024-06-07T16:47:05.1691846Z ##[group]Docker info
+2024-06-07T16:47:05.1717715Z [command]/usr/bin/docker version
+2024-06-07T16:47:05.1930556Z Client: Docker Engine - Community
+2024-06-07T16:47:05.1931150Z  Version:           24.0.9
+2024-06-07T16:47:05.1933113Z  API version:       1.43
+2024-06-07T16:47:05.1933912Z  Go version:        go1.20.13
+2024-06-07T16:47:05.1934456Z  Git commit:        2936816
+2024-06-07T16:47:05.1934895Z  Built:             Thu Feb  1 00:48:39 2024
+2024-06-07T16:47:05.1935426Z  OS/Arch:           linux/amd64
+2024-06-07T16:47:05.1935968Z  Context:           default
+2024-06-07T16:47:05.1936191Z 
+2024-06-07T16:47:05.1936531Z Server: Docker Engine - Community
+2024-06-07T16:47:05.1936937Z  Engine:
+2024-06-07T16:47:05.1937275Z   Version:          24.0.9
+2024-06-07T16:47:05.1937733Z   API version:      1.43 (minimum version 1.12)
+2024-06-07T16:47:05.1938202Z   Go version:       go1.20.13
+2024-06-07T16:47:05.1938601Z   Git commit:       fca702d
+2024-06-07T16:47:05.1939259Z   Built:            Thu Feb  1 00:48:39 2024
+2024-06-07T16:47:05.1939866Z   OS/Arch:          linux/amd64
+2024-06-07T16:47:05.1940242Z   Experimental:     false
+2024-06-07T16:47:05.1940692Z  containerd:
+2024-06-07T16:47:05.1941234Z   Version:          1.6.32
+2024-06-07T16:47:05.1941712Z   GitCommit:        8b3b7ca2e5ce38e8f31a34f35b2b68ceb8470d89
+2024-06-07T16:47:05.1942297Z  runc:
+2024-06-07T16:47:05.1942576Z   Version:          1.1.12
+2024-06-07T16:47:05.1943039Z   GitCommit:        v1.1.12-0-g51d5e94
+2024-06-07T16:47:05.1943565Z  docker-init:
+2024-06-07T16:47:05.1943902Z   Version:          0.19.0
+2024-06-07T16:47:05.1944331Z   GitCommit:        de40ad0
+2024-06-07T16:47:05.1970199Z [command]/usr/bin/docker info
+2024-06-07T16:47:05.3728226Z Client: Docker Engine - Community
+2024-06-07T16:47:05.3729010Z  Version:    24.0.9
+2024-06-07T16:47:05.3729631Z  Context:    default
+2024-06-07T16:47:05.3730186Z  Debug Mode: false
+2024-06-07T16:47:05.3730707Z  Plugins:
+2024-06-07T16:47:05.3731279Z   buildx: Docker Buildx (Docker Inc.)
+2024-06-07T16:47:05.3731956Z     Version:  v0.14.1
+2024-06-07T16:47:05.3733828Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2024-06-07T16:47:05.3734747Z   compose: Docker Compose (Docker Inc.)
+2024-06-07T16:47:05.3735439Z     Version:  v2.23.3
+2024-06-07T16:47:05.3736387Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2024-06-07T16:47:05.3737027Z 
+2024-06-07T16:47:05.3737214Z Server:
+2024-06-07T16:47:05.3737838Z  Containers: 0
+2024-06-07T16:47:05.3738383Z   Running: 0
+2024-06-07T16:47:05.3738869Z   Paused: 0
+2024-06-07T16:47:05.3739485Z   Stopped: 0
+2024-06-07T16:47:05.3739995Z  Images: 14
+2024-06-07T16:47:05.3740512Z  Server Version: 24.0.9
+2024-06-07T16:47:05.3741171Z  Storage Driver: overlay2
+2024-06-07T16:47:05.3741791Z   Backing Filesystem: extfs
+2024-06-07T16:47:05.3742415Z   Supports d_type: true
+2024-06-07T16:47:05.3743083Z   Using metacopy: false
+2024-06-07T16:47:05.3743488Z   Native Overlay Diff: false
+2024-06-07T16:47:05.3743871Z   userxattr: false
+2024-06-07T16:47:05.3744371Z  Logging Driver: json-file
+2024-06-07T16:47:05.3744783Z  Cgroup Driver: cgroupfs
+2024-06-07T16:47:05.3745232Z  Cgroup Version: 2
+2024-06-07T16:47:05.3745636Z  Plugins:
+2024-06-07T16:47:05.3745915Z   Volume: local
+2024-06-07T16:47:05.3746516Z   Network: bridge host ipvlan macvlan null overlay
+2024-06-07T16:47:05.3747744Z   Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+2024-06-07T16:47:05.3748734Z  Swarm: inactive
+2024-06-07T16:47:05.3749208Z  Runtimes: io.containerd.runc.v2 runc
+2024-06-07T16:47:05.3749919Z  Default Runtime: runc
+2024-06-07T16:47:05.3750326Z  Init Binary: docker-init
+2024-06-07T16:47:05.3750924Z  containerd version: 8b3b7ca2e5ce38e8f31a34f35b2b68ceb8470d89
+2024-06-07T16:47:05.3751539Z  runc version: v1.1.12-0-g51d5e94
+2024-06-07T16:47:05.3751956Z  init version: de40ad0
+2024-06-07T16:47:05.3752401Z  Security Options:
+2024-06-07T16:47:05.3752802Z   apparmor
+2024-06-07T16:47:05.3753198Z   seccomp
+2024-06-07T16:47:05.3753628Z    Profile: builtin
+2024-06-07T16:47:05.3754120Z   cgroupns
+2024-06-07T16:47:05.3754603Z  Kernel Version: 6.5.0-1021-azure
+2024-06-07T16:47:05.3755248Z  Operating System: Ubuntu 22.04.4 LTS
+2024-06-07T16:47:05.3755747Z  OSType: linux
+2024-06-07T16:47:05.3756726Z  Architecture: x86_64
+2024-06-07T16:47:05.3757333Z  CPUs: 4
+2024-06-07T16:47:05.3757747Z  Total Memory: 15.61GiB
+2024-06-07T16:47:05.3758248Z  Name: fv-az1153-964
+2024-06-07T16:47:05.3758884Z  ID: 74a93b01-06c6-4cce-8fc1-bd6544e284bb
+2024-06-07T16:47:05.3759471Z  Docker Root Dir: /var/lib/docker
+2024-06-07T16:47:05.3760129Z  Debug Mode: false
+2024-06-07T16:47:05.3760899Z  Username: ***
+2024-06-07T16:47:05.3761266Z  Experimental: false
+2024-06-07T16:47:05.3761896Z  Insecure Registries:
+2024-06-07T16:47:05.3762347Z   127.0.0.0/8
+2024-06-07T16:47:05.3762811Z  Live Restore Enabled: false
+2024-06-07T16:47:05.3763073Z 
+2024-06-07T16:47:05.3763903Z ##[endgroup]
+2024-06-07T16:47:05.4289935Z ##[group]Buildx version
+2024-06-07T16:47:05.4321620Z [command]/usr/bin/docker buildx version
+2024-06-07T16:47:05.4977120Z github.com/docker/buildx v0.14.1 59582a88fca7858dbe1886fd1556b2a0d79e43a3
+2024-06-07T16:47:05.5016998Z ##[endgroup]
+2024-06-07T16:47:05.5027347Z ##[group]Creating a new builder instance
+2024-06-07T16:47:05.5736632Z [command]/usr/bin/docker buildx create --name builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4 --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use
+2024-06-07T16:47:05.6274187Z builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4
+2024-06-07T16:47:05.6303878Z ##[endgroup]
+2024-06-07T16:47:05.6304577Z ##[group]Booting builder
+2024-06-07T16:47:05.6334828Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4
+2024-06-07T16:47:05.6814297Z #1 [internal] booting buildkit
+2024-06-07T16:47:05.8319227Z #1 pulling image moby/buildkit:buildx-stable-1
+2024-06-07T16:47:05.9078239Z #1 pulling image moby/buildkit:buildx-stable-1 0.2s done
+2024-06-07T16:47:06.0584196Z #1 creating container buildx_buildkit_builder-5ee66ac9-df43-4749-b58e-ac16a5377ca40
+2024-06-07T16:47:06.5002731Z #1 creating container buildx_buildkit_builder-5ee66ac9-df43-4749-b58e-ac16a5377ca40 0.6s done
+2024-06-07T16:47:06.5037738Z #1 DONE 0.8s
+2024-06-07T16:47:06.5881081Z Name:          builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4
+2024-06-07T16:47:06.5882085Z Driver:        docker-container
+2024-06-07T16:47:06.5883045Z Last Activity: 2024-06-07 16:47:05 +0000 UTC
+2024-06-07T16:47:06.5883918Z 
+2024-06-07T16:47:06.5884118Z Nodes:
+2024-06-07T16:47:06.5884961Z Name:                  builder-5ee66ac9-df43-4749-b58e-ac16a5377ca40
+2024-06-07T16:47:06.5886068Z Endpoint:              unix:///var/run/docker.sock
+2024-06-07T16:47:06.5886832Z Status:                running
+2024-06-07T16:47:06.5888140Z BuildKit daemon flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+2024-06-07T16:47:06.5889567Z BuildKit version:      v0.13.2
+2024-06-07T16:47:06.5890253Z Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
+2024-06-07T16:47:06.5890999Z Labels:
+2024-06-07T16:47:06.5891433Z  org.mobyproject.buildkit.worker.executor:         oci
+2024-06-07T16:47:06.5892094Z  org.mobyproject.buildkit.worker.hostname:         b92f07262b0f
+2024-06-07T16:47:06.5892809Z  org.mobyproject.buildkit.worker.network:          host
+2024-06-07T16:47:06.5893822Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2024-06-07T16:47:06.5894505Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2024-06-07T16:47:06.5895453Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2024-06-07T16:47:06.5896023Z GC Policy rule#0:
+2024-06-07T16:47:06.5896363Z  All:           false
+2024-06-07T16:47:06.5897163Z  Filters:       type==source.local,type==exec.cachemount,type==source.git.checkout
+2024-06-07T16:47:06.5897806Z  Keep Duration: 48h0m0s
+2024-06-07T16:47:06.5898181Z  Keep Bytes:    488.3MiB
+2024-06-07T16:47:06.5898631Z GC Policy rule#1:
+2024-06-07T16:47:06.5898995Z  All:           false
+2024-06-07T16:47:06.5899325Z  Keep Duration: 1440h0m0s
+2024-06-07T16:47:06.5899764Z  Keep Bytes:    7.451GiB
+2024-06-07T16:47:06.5900141Z GC Policy rule#2:
+2024-06-07T16:47:06.5900538Z  All:        false
+2024-06-07T16:47:06.5900891Z  Keep Bytes: 7.451GiB
+2024-06-07T16:47:06.5901216Z GC Policy rule#3:
+2024-06-07T16:47:06.5901627Z  All:        true
+2024-06-07T16:47:06.5902002Z  Keep Bytes: 7.451GiB
+2024-06-07T16:47:06.5925506Z ##[endgroup]
+2024-06-07T16:47:06.7103419Z ##[group]Inspect builder
+2024-06-07T16:47:06.7104327Z {
+2024-06-07T16:47:06.7105103Z   "nodes": [
+2024-06-07T16:47:06.7106066Z     {
+2024-06-07T16:47:06.7107166Z       "name": "builder-5ee66ac9-df43-4749-b58e-ac16a5377ca40",
+2024-06-07T16:47:06.7108123Z       "endpoint": "unix:///var/run/docker.sock",
+2024-06-07T16:47:06.7108991Z       "status": "running",
+2024-06-07T16:47:06.7109746Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386",
+2024-06-07T16:47:06.7110639Z       "labels": {
+2024-06-07T16:47:06.7111249Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2024-06-07T16:47:06.7111929Z         "org.mobyproject.buildkit.worker.hostname": "b92f07262b0f",
+2024-06-07T16:47:06.7112666Z         "org.mobyproject.buildkit.worker.network": "host",
+2024-06-07T16:47:06.7113520Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2024-06-07T16:47:06.7114385Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2024-06-07T16:47:06.7115272Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2024-06-07T16:47:06.7115839Z       },
+2024-06-07T16:47:06.7116545Z       "gcPolicy": [
+2024-06-07T16:47:06.7117068Z         {
+2024-06-07T16:47:06.7117374Z           "all": false,
+2024-06-07T16:47:06.7117735Z           "filter": [
+2024-06-07T16:47:06.7118173Z             "type==source.local",
+2024-06-07T16:47:06.7118618Z             "type==exec.cachemount",
+2024-06-07T16:47:06.7119066Z             "type==source.git.checkout"
+2024-06-07T16:47:06.7119635Z           ],
+2024-06-07T16:47:06.7120118Z           "keepDuration": "48h0m0s",
+2024-06-07T16:47:06.7120644Z           "keepBytes": "488.3MiB"
+2024-06-07T16:47:06.7121050Z         },
+2024-06-07T16:47:06.7121351Z         {
+2024-06-07T16:47:06.7121705Z           "all": false,
+2024-06-07T16:47:06.7122137Z           "keepDuration": "1440h0m0s",
+2024-06-07T16:47:06.7122565Z           "keepBytes": "7.451GiB"
+2024-06-07T16:47:06.7123227Z         },
+2024-06-07T16:47:06.7123531Z         {
+2024-06-07T16:47:06.7123820Z           "all": false,
+2024-06-07T16:47:06.7124292Z           "keepBytes": "7.451GiB"
+2024-06-07T16:47:06.7124760Z         },
+2024-06-07T16:47:06.7125139Z         {
+2024-06-07T16:47:06.7125562Z           "all": true,
+2024-06-07T16:47:06.7125889Z           "keepBytes": "7.451GiB"
+2024-06-07T16:47:06.7126264Z         }
+2024-06-07T16:47:06.7126637Z       ]
+2024-06-07T16:47:06.7126950Z     }
+2024-06-07T16:47:06.7127461Z   ],
+2024-06-07T16:47:06.7128114Z   "name": "builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4",
+2024-06-07T16:47:06.7128684Z   "driver": "docker-container",
+2024-06-07T16:47:06.7129343Z   "lastActivity": "2024-06-07T16:47:05.000Z"
+2024-06-07T16:47:06.7129924Z }
+2024-06-07T16:47:06.7130686Z ##[endgroup]
+2024-06-07T16:47:06.7131355Z ##[group]BuildKit version
+2024-06-07T16:47:07.1102648Z builder-5ee66ac9-df43-4749-b58e-ac16a5377ca40: moby/buildkit:buildx-stable-1 => buildkitd github.com/moby/buildkit v0.13.2 2e18d709fefdcc2db20853ee241c75b058189d39
+2024-06-07T16:47:07.1104714Z ##[endgroup]
+2024-06-07T16:47:07.1291410Z ##[group]Run docker/metadata-action@v4
+2024-06-07T16:47:07.1291928Z with:
+2024-06-07T16:47:07.1292368Z   images: ***/api
+2024-06-07T16:47:07.1292824Z   context: workflow
+2024-06-07T16:47:07.1293431Z   github-token: ***
+2024-06-07T16:47:07.1293758Z ##[endgroup]
+2024-06-07T16:47:07.4378514Z ##[group]Context info
+2024-06-07T16:47:07.4379441Z eventName: push
+2024-06-07T16:47:07.4380158Z sha: 2b35dfbbe17e697d773986f92522a663c72ac981
+2024-06-07T16:47:07.4381104Z ref: refs/tags/v1.0.0
+2024-06-07T16:47:07.4381863Z workflow: Continuous Delivery Docker Image for API
+2024-06-07T16:47:07.4382682Z action: meta2
+2024-06-07T16:47:07.4383780Z actor: ***
+2024-06-07T16:47:07.4384394Z runNumber: 1
+2024-06-07T16:47:07.4385049Z runId: 9420401595
+2024-06-07T16:47:07.4388387Z ##[endgroup]
+2024-06-07T16:47:07.4389434Z ##[group]Processing images input
+2024-06-07T16:47:07.4390440Z name=***/api,enable=true
+2024-06-07T16:47:07.4391515Z ##[endgroup]
+2024-06-07T16:47:07.4405971Z ##[group]Processing tags input
+2024-06-07T16:47:07.4406964Z type=schedule,pattern=nightly,enable=true,priority=1000
+2024-06-07T16:47:07.4408134Z type=ref,event=branch,enable=true,priority=600
+2024-06-07T16:47:07.4409075Z type=ref,event=tag,enable=true,priority=600
+2024-06-07T16:47:07.4410508Z type=ref,event=pr,prefix=pr-,enable=true,priority=600
+2024-06-07T16:47:07.4411811Z ##[endgroup]
+2024-06-07T16:47:07.4412962Z ##[group]Processing flavor input
+2024-06-07T16:47:07.4413707Z latest=auto
+2024-06-07T16:47:07.4414241Z prefix=
+2024-06-07T16:47:07.4414893Z prefixLatest=false
+2024-06-07T16:47:07.4415408Z suffix=
+2024-06-07T16:47:07.4415918Z suffixLatest=false
+2024-06-07T16:47:07.4417031Z ##[endgroup]
+2024-06-07T16:47:07.4457133Z ##[group]Docker image version
+2024-06-07T16:47:07.4457787Z v1.0.0
+2024-06-07T16:47:07.4458650Z ##[endgroup]
+2024-06-07T16:47:07.4463227Z ##[group]Docker tags
+2024-06-07T16:47:07.4463928Z ***/api:v1.0.0
+2024-06-07T16:47:07.4464635Z ***/api:latest
+2024-06-07T16:47:07.4465551Z ##[endgroup]
+2024-06-07T16:47:07.4648671Z ##[group]Docker labels
+2024-06-07T16:47:07.4649496Z org.opencontainers.image.created=2024-06-07T16:47:07.440Z
+2024-06-07T16:47:07.4650490Z org.opencontainers.image.description=API source code for my mini project at Viettel Digital Talent 2024
+2024-06-07T16:47:07.4651457Z org.opencontainers.image.licenses=
+2024-06-07T16:47:07.4652375Z org.opencontainers.image.revision=2b35dfbbe17e697d773986f92522a663c72ac981
+2024-06-07T16:47:07.4653759Z org.opencontainers.image.source=https://github.com/***/VDT2024-api
+2024-06-07T16:47:07.4654807Z org.opencontainers.image.title=VDT2024-api
+2024-06-07T16:47:07.4656095Z org.opencontainers.image.url=https://github.com/***/VDT2024-api
+2024-06-07T16:47:07.4657184Z org.opencontainers.image.version=v1.0.0
+2024-06-07T16:47:07.4658114Z ##[endgroup]
+2024-06-07T16:47:07.4658828Z ##[group]JSON output
+2024-06-07T16:47:07.4659164Z {
+2024-06-07T16:47:07.4659457Z   "tags": [
+2024-06-07T16:47:07.4659933Z     "***/api:v1.0.0",
+2024-06-07T16:47:07.4660485Z     "***/api:latest"
+2024-06-07T16:47:07.4661081Z   ],
+2024-06-07T16:47:07.4661726Z   "labels": {
+2024-06-07T16:47:07.4662617Z     "org.opencontainers.image.created": "2024-06-07T16:47:07.440Z",
+2024-06-07T16:47:07.4664146Z     "org.opencontainers.image.description": "API source code for my mini project at Viettel Digital Talent 2024",
+2024-06-07T16:47:07.4665680Z     "org.opencontainers.image.licenses": "",
+2024-06-07T16:47:07.4666565Z     "org.opencontainers.image.revision": "2b35dfbbe17e697d773986f92522a663c72ac981",
+2024-06-07T16:47:07.4668419Z     "org.opencontainers.image.source": "https://github.com/***/VDT2024-api",
+2024-06-07T16:47:07.4669403Z     "org.opencontainers.image.title": "VDT2024-api",
+2024-06-07T16:47:07.4670209Z     "org.opencontainers.image.url": "https://github.com/***/VDT2024-api",
+2024-06-07T16:47:07.4670995Z     "org.opencontainers.image.version": "v1.0.0"
+2024-06-07T16:47:07.4671422Z   }
+2024-06-07T16:47:07.4672024Z }
+2024-06-07T16:47:07.4672773Z ##[endgroup]
+2024-06-07T16:47:07.4673430Z ##[group]Bake file definition
+2024-06-07T16:47:07.4674071Z {
+2024-06-07T16:47:07.4674352Z   "target": {
+2024-06-07T16:47:07.4674854Z     "docker-metadata-action": {
+2024-06-07T16:47:07.4675265Z       "tags": [
+2024-06-07T16:47:07.4675852Z         "***/api:v1.0.0",
+2024-06-07T16:47:07.4677078Z         "***/api:latest"
+2024-06-07T16:47:07.4677470Z       ],
+2024-06-07T16:47:07.4677872Z       "labels": {
+2024-06-07T16:47:07.4678664Z         "org.opencontainers.image.created": "2024-06-07T16:47:07.440Z",
+2024-06-07T16:47:07.4679556Z         "org.opencontainers.image.description": "API source code for my mini project at Viettel Digital Talent 2024",
+2024-06-07T16:47:07.4680373Z         "org.opencontainers.image.licenses": "",
+2024-06-07T16:47:07.4681157Z         "org.opencontainers.image.revision": "2b35dfbbe17e697d773986f92522a663c72ac981",
+2024-06-07T16:47:07.4682114Z         "org.opencontainers.image.source": "https://github.com/***/VDT2024-api",
+2024-06-07T16:47:07.4682825Z         "org.opencontainers.image.title": "VDT2024-api",
+2024-06-07T16:47:07.4683680Z         "org.opencontainers.image.url": "https://github.com/***/VDT2024-api",
+2024-06-07T16:47:07.4684361Z         "org.opencontainers.image.version": "v1.0.0"
+2024-06-07T16:47:07.4684894Z       },
+2024-06-07T16:47:07.4685216Z       "args": {
+2024-06-07T16:47:07.4685607Z         "DOCKER_META_IMAGES": "***/api",
+2024-06-07T16:47:07.4686124Z         "DOCKER_META_VERSION": "v1.0.0"
+2024-06-07T16:47:07.4686514Z       }
+2024-06-07T16:47:07.4686809Z     }
+2024-06-07T16:47:07.4687190Z   }
+2024-06-07T16:47:07.4687489Z }
+2024-06-07T16:47:07.4688328Z ##[endgroup]
+2024-06-07T16:47:07.4823093Z ##[group]Run docker/build-push-action@v4
+2024-06-07T16:47:07.4823639Z with:
+2024-06-07T16:47:07.4824070Z   context: .
+2024-06-07T16:47:07.4824514Z   builder: builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4
+2024-06-07T16:47:07.4824976Z   push: true
+2024-06-07T16:47:07.4825529Z   tags: ***/api:v1.0.0
+***/api:latest
+2024-06-07T16:47:07.4825990Z   cache-from: type=gha
+2024-06-07T16:47:07.4826399Z   cache-to: type=gha,mode=max
+2024-06-07T16:47:07.4826873Z   load: false
+2024-06-07T16:47:07.4827202Z   no-cache: false
+2024-06-07T16:47:07.4827582Z   pull: false
+2024-06-07T16:47:07.4828124Z   github-token: ***
+2024-06-07T16:47:07.4828501Z env:
+2024-06-07T16:47:07.4828851Z   DOCKER_METADATA_OUTPUT_VERSION: v1.0.0
+2024-06-07T16:47:07.4829563Z   DOCKER_METADATA_OUTPUT_TAGS: ***/api:v1.0.0
+***/api:latest
+2024-06-07T16:47:07.4832393Z   DOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2024-06-07T16:47:07.440Z
+org.opencontainers.image.description=API source code for my mini project at Viettel Digital Talent 2024
+org.opencontainers.image.licenses=
+org.opencontainers.image.revision=2b35dfbbe17e697d773986f92522a663c72ac981
+org.opencontainers.image.source=https://github.com/***/VDT2024-api
+org.opencontainers.image.title=VDT2024-api
+org.opencontainers.image.url=https://github.com/***/VDT2024-api
+org.opencontainers.image.version=v1.0.0
+2024-06-07T16:47:07.4837839Z   DOCKER_METADATA_OUTPUT_JSON: {"tags":["***/api:v1.0.0","***/api:latest"],"labels":{"org.opencontainers.image.created":"2024-06-07T16:47:07.440Z","org.opencontainers.image.description":"API source code for my mini project at Viettel Digital Talent 2024","org.opencontainers.image.licenses":"","org.opencontainers.image.revision":"2b35dfbbe17e697d773986f92522a663c72ac981","org.opencontainers.image.source":"https://github.com/***/VDT2024-api","org.opencontainers.image.title":"VDT2024-api","org.opencontainers.image.url":"https://github.com/***/VDT2024-api","org.opencontainers.image.version":"v1.0.0"}}
+2024-06-07T16:47:07.4840793Z   DOCKER_METADATA_OUTPUT_BAKE_FILE: /tmp/docker-actions-toolkit-u07f9g/docker-metadata-action-bake.json
+2024-06-07T16:47:07.4841620Z ##[endgroup]
+2024-06-07T16:47:07.6450574Z ##[group]GitHub Actions runtime token ACs
+2024-06-07T16:47:07.6464398Z refs/tags/v1.0.0: read/write
+2024-06-07T16:47:07.6465107Z refs/heads/main: read
+2024-06-07T16:47:07.6466607Z ##[endgroup]
+2024-06-07T16:47:07.6467664Z ##[group]Docker info
+2024-06-07T16:47:07.6514966Z [command]/usr/bin/docker version
+2024-06-07T16:47:07.6720894Z Client: Docker Engine - Community
+2024-06-07T16:47:07.6725606Z  Version:           24.0.9
+2024-06-07T16:47:07.6726639Z  API version:       1.43
+2024-06-07T16:47:07.6727961Z  Go version:        go1.20.13
+2024-06-07T16:47:07.6730444Z  Git commit:        2936816
+2024-06-07T16:47:07.6731148Z  Built:             Thu Feb  1 00:48:39 2024
+2024-06-07T16:47:07.6731950Z  OS/Arch:           linux/amd64
+2024-06-07T16:47:07.6732585Z  Context:           default
+2024-06-07T16:47:07.6733157Z 
+2024-06-07T16:47:07.6733557Z Server: Docker Engine - Community
+2024-06-07T16:47:07.6734218Z  Engine:
+2024-06-07T16:47:07.6734705Z   Version:          24.0.9
+2024-06-07T16:47:07.6735407Z   API version:      1.43 (minimum version 1.12)
+2024-06-07T16:47:07.6736164Z   Go version:       go1.20.13
+2024-06-07T16:47:07.6736762Z   Git commit:       fca702d
+2024-06-07T16:47:07.6737532Z   Built:            Thu Feb  1 00:48:39 2024
+2024-06-07T16:47:07.6738247Z   OS/Arch:          linux/amd64
+2024-06-07T16:47:07.6738819Z   Experimental:     false
+2024-06-07T16:47:07.6739299Z  containerd:
+2024-06-07T16:47:07.6739632Z   Version:          1.6.32
+2024-06-07T16:47:07.6740203Z   GitCommit:        8b3b7ca2e5ce38e8f31a34f35b2b68ceb8470d89
+2024-06-07T16:47:07.6740700Z  runc:
+2024-06-07T16:47:07.6740975Z   Version:          1.1.12
+2024-06-07T16:47:07.6741517Z   GitCommit:        v1.1.12-0-g51d5e94
+2024-06-07T16:47:07.6741967Z  docker-init:
+2024-06-07T16:47:07.6742296Z   Version:          0.19.0
+2024-06-07T16:47:07.6742753Z   GitCommit:        de40ad0
+2024-06-07T16:47:07.6771680Z [command]/usr/bin/docker info
+2024-06-07T16:47:07.7202232Z Client: Docker Engine - Community
+2024-06-07T16:47:07.7203001Z  Version:    24.0.9
+2024-06-07T16:47:07.7203755Z  Context:    default
+2024-06-07T16:47:07.7204268Z  Debug Mode: false
+2024-06-07T16:47:07.7204806Z  Plugins:
+2024-06-07T16:47:07.7205501Z   buildx: Docker Buildx (Docker Inc.)
+2024-06-07T16:47:07.7206214Z     Version:  v0.14.1
+2024-06-07T16:47:07.7207297Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2024-06-07T16:47:07.7208114Z   compose: Docker Compose (Docker Inc.)
+2024-06-07T16:47:07.7208805Z     Version:  v2.23.3
+2024-06-07T16:47:07.7209737Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2024-06-07T16:47:07.7210366Z 
+2024-06-07T16:47:07.7210602Z Server:
+2024-06-07T16:47:07.7211103Z  Containers: 1
+2024-06-07T16:47:07.7211668Z   Running: 1
+2024-06-07T16:47:07.7212165Z   Paused: 0
+2024-06-07T16:47:07.7212678Z   Stopped: 0
+2024-06-07T16:47:07.7213279Z  Images: 14
+2024-06-07T16:47:07.7213784Z  Server Version: 24.0.9
+2024-06-07T16:47:07.7214298Z  Storage Driver: overlay2
+2024-06-07T16:47:07.7214820Z   Backing Filesystem: extfs
+2024-06-07T16:47:07.7215234Z   Supports d_type: true
+2024-06-07T16:47:07.7215604Z   Using metacopy: false
+2024-06-07T16:47:07.7216063Z   Native Overlay Diff: false
+2024-06-07T16:47:07.7216470Z   userxattr: false
+2024-06-07T16:47:07.7216848Z  Logging Driver: json-file
+2024-06-07T16:47:07.7217301Z  Cgroup Driver: cgroupfs
+2024-06-07T16:47:07.7217875Z  Cgroup Version: 2
+2024-06-07T16:47:07.7218492Z  Plugins:
+2024-06-07T16:47:07.7218996Z   Volume: local
+2024-06-07T16:47:07.7219572Z   Network: bridge host ipvlan macvlan null overlay
+2024-06-07T16:47:07.7220910Z   Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+2024-06-07T16:47:07.7221745Z  Swarm: inactive
+2024-06-07T16:47:07.7222130Z  Runtimes: runc io.containerd.runc.v2
+2024-06-07T16:47:07.7222877Z  Default Runtime: runc
+2024-06-07T16:47:07.7223517Z  Init Binary: docker-init
+2024-06-07T16:47:07.7224078Z  containerd version: 8b3b7ca2e5ce38e8f31a34f35b2b68ceb8470d89
+2024-06-07T16:47:07.7224780Z  runc version: v1.1.12-0-g51d5e94
+2024-06-07T16:47:07.7225204Z  init version: de40ad0
+2024-06-07T16:47:07.7225569Z  Security Options:
+2024-06-07T16:47:07.7226117Z   apparmor
+2024-06-07T16:47:07.7226411Z   seccomp
+2024-06-07T16:47:07.7226724Z    Profile: builtin
+2024-06-07T16:47:07.7227493Z   cgroupns
+2024-06-07T16:47:07.7227882Z  Kernel Version: 6.5.0-1021-azure
+2024-06-07T16:47:07.7228328Z  Operating System: Ubuntu 22.04.4 LTS
+2024-06-07T16:47:07.7229025Z  OSType: linux
+2024-06-07T16:47:07.7229377Z  Architecture: x86_64
+2024-06-07T16:47:07.7229953Z  CPUs: 4
+2024-06-07T16:47:07.7230362Z  Total Memory: 15.61GiB
+2024-06-07T16:47:07.7230802Z  Name: fv-az1153-964
+2024-06-07T16:47:07.7231489Z  ID: 74a93b01-06c6-4cce-8fc1-bd6544e284bb
+2024-06-07T16:47:07.7232139Z  Docker Root Dir: /var/lib/docker
+2024-06-07T16:47:07.7232664Z  Debug Mode: false
+2024-06-07T16:47:07.7233267Z  Username: ***
+2024-06-07T16:47:07.7233748Z  Experimental: false
+2024-06-07T16:47:07.7234128Z  Insecure Registries:
+2024-06-07T16:47:07.7234586Z   127.0.0.0/8
+2024-06-07T16:47:07.7234951Z  Live Restore Enabled: false
+2024-06-07T16:47:07.7235200Z 
+2024-06-07T16:47:07.7236106Z ##[endgroup]
+2024-06-07T16:47:07.7236908Z ##[group]Proxy configuration
+2024-06-07T16:47:07.7237453Z No proxy configuration found
+2024-06-07T16:47:07.7238420Z ##[endgroup]
+2024-06-07T16:47:07.7750312Z ##[group]Buildx version
+2024-06-07T16:47:07.7779342Z [command]/usr/bin/docker buildx version
+2024-06-07T16:47:07.8317676Z github.com/docker/buildx v0.14.1 59582a88fca7858dbe1886fd1556b2a0d79e43a3
+2024-06-07T16:47:07.8350157Z ##[endgroup]
+2024-06-07T16:47:08.4174250Z [command]/usr/bin/docker buildx build --cache-from type=gha --cache-to type=gha,mode=max --iidfile /tmp/docker-actions-toolkit-Z6thSX/iidfile --tag ***/api:v1.0.0 --tag ***/api:latest --builder builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4 --metadata-file /tmp/docker-actions-toolkit-Z6thSX/metadata-file --push .
+2024-06-07T16:47:08.7010814Z #0 building with "builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4" instance using docker-container driver
+2024-06-07T16:47:08.7012003Z 
+2024-06-07T16:47:08.7012314Z #1 [internal] load build definition from Dockerfile
+2024-06-07T16:47:08.7013326Z #1 transferring dockerfile: 154B done
+2024-06-07T16:47:08.7014060Z #1 DONE 0.0s
+2024-06-07T16:47:08.7014370Z 
+2024-06-07T16:47:08.7014948Z #2 [auth] library/node:pull token for registry-1.docker.io
+2024-06-07T16:47:08.8509798Z #2 DONE 0.0s
+2024-06-07T16:47:08.8510266Z 
+2024-06-07T16:47:08.8510906Z #3 [internal] load metadata for docker.io/library/node:18-alpine
+2024-06-07T16:47:09.0317131Z #3 DONE 0.4s
+2024-06-07T16:47:09.2021814Z 
+2024-06-07T16:47:09.2022504Z #4 [internal] load .dockerignore
+2024-06-07T16:47:09.2023597Z #4 transferring context: 52B done
+2024-06-07T16:47:09.2024322Z #4 DONE 0.0s
+2024-06-07T16:47:09.2024533Z 
+2024-06-07T16:47:09.2024696Z #5 [internal] load build context
+2024-06-07T16:47:09.2025269Z #5 DONE 0.0s
+2024-06-07T16:47:09.2025501Z 
+2024-06-07T16:47:09.2026424Z #6 [1/5] FROM docker.io/library/node:18-alpine@sha256:cf350f8bb497d82471f1f735df5d6d3321138be3b9f7f84ad10a4b86a438bbc3
+2024-06-07T16:47:09.2028038Z #6 resolve docker.io/library/node:18-alpine@sha256:cf350f8bb497d82471f1f735df5d6d3321138be3b9f7f84ad10a4b86a438bbc3 done
+2024-06-07T16:47:09.2028997Z #6 DONE 0.0s
+2024-06-07T16:47:09.2029201Z 
+2024-06-07T16:47:09.2029485Z #7 importing cache manifest from gha:9875005039820932722
+2024-06-07T16:47:11.1182710Z #7 DONE 2.1s
+2024-06-07T16:47:11.3031138Z 
+2024-06-07T16:47:11.3032266Z #5 [internal] load build context
+2024-06-07T16:47:11.3033167Z #5 transferring context: 303.80kB 0.0s done
+2024-06-07T16:47:11.3033960Z #5 DONE 0.0s
+2024-06-07T16:47:11.3034378Z 
+2024-06-07T16:47:11.3035428Z #6 [1/5] FROM docker.io/library/node:18-alpine@sha256:cf350f8bb497d82471f1f735df5d6d3321138be3b9f7f84ad10a4b86a438bbc3
+2024-06-07T16:47:11.3036962Z #6 sha256:bd06542006fda4279cb2edd761a84311c1fdbb90554e9feaaf078a3674845742 447B / 447B 0.0s done
+2024-06-07T16:47:11.3038251Z #6 sha256:22a81a0f8d1c30ce5a5da3579a84ab4c22fd2f14cb33863c1a752da6f056dc18 1.38MB / 1.38MB 0.1s done
+2024-06-07T16:47:11.4606342Z #6 sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 15.73MB / 39.83MB 0.3s
+2024-06-07T16:47:11.4607325Z #6 sha256:d25f557d7f31bf7acfac935859b5153da41d13c41f2b468d16f729a5b883634f 0B / 3.62MB 0.2s
+2024-06-07T16:47:11.6107845Z #6 sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 24.12MB / 39.83MB 0.5s
+2024-06-07T16:47:11.6109337Z #6 sha256:d25f557d7f31bf7acfac935859b5153da41d13c41f2b468d16f729a5b883634f 3.62MB / 3.62MB 0.3s done
+2024-06-07T16:47:11.6110911Z #6 extracting sha256:d25f557d7f31bf7acfac935859b5153da41d13c41f2b468d16f729a5b883634f 0.1s done
+2024-06-07T16:47:11.7605670Z #6 sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 30.41MB / 39.83MB 0.6s
+2024-06-07T16:47:11.9107955Z #6 sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 36.70MB / 39.83MB 0.8s
+2024-06-07T16:47:12.1487270Z #6 sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 39.83MB / 39.83MB 0.8s done
+2024-06-07T16:47:12.1489179Z #6 extracting sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710
+2024-06-07T16:47:12.8299139Z #6 extracting sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 0.8s done
+2024-06-07T16:47:12.8300720Z #6 DONE 1.7s
+2024-06-07T16:47:13.0138140Z 
+2024-06-07T16:47:13.0140087Z #6 [1/5] FROM docker.io/library/node:18-alpine@sha256:cf350f8bb497d82471f1f735df5d6d3321138be3b9f7f84ad10a4b86a438bbc3
+2024-06-07T16:47:13.0142567Z #6 extracting sha256:22a81a0f8d1c30ce5a5da3579a84ab4c22fd2f14cb33863c1a752da6f056dc18 0.0s done
+2024-06-07T16:47:13.0144466Z #6 extracting sha256:bd06542006fda4279cb2edd761a84311c1fdbb90554e9feaaf078a3674845742 done
+2024-06-07T16:47:13.0145713Z #6 DONE 1.7s
+2024-06-07T16:47:13.0146096Z 
+2024-06-07T16:47:13.0146256Z #8 [2/5] WORKDIR /app
+2024-06-07T16:47:13.0573325Z #8 DONE 0.2s
+2024-06-07T16:47:13.2203519Z 
+2024-06-07T16:47:13.2205464Z #9 [3/5] COPY package*.json ./
+2024-06-07T16:47:13.2206015Z #9 DONE 0.0s
+2024-06-07T16:47:13.2206237Z 
+2024-06-07T16:47:13.2206580Z #10 [4/5] RUN npm install
+2024-06-07T16:47:14.5337599Z #10 1.463 npm warn deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+2024-06-07T16:47:14.9304514Z #10 1.860 npm warn deprecated samsam@1.1.3: This package has been deprecated in favour of @sinonjs/samsam
+2024-06-07T16:47:15.1054324Z #10 1.901 npm warn deprecated formatio@1.0.2: This package is unmaintained. Use @sinonjs/formatio instead
+2024-06-07T16:47:15.1058083Z #10 2.035 npm warn deprecated superagent@1.2.0: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+2024-06-07T16:47:15.2568646Z #10 2.187 npm warn deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+2024-06-07T16:47:15.3575219Z #10 2.219 npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2024-06-07T16:47:15.3579285Z #10 2.260 npm warn deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2024-06-07T16:47:15.3581948Z #10 2.287 npm warn deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+2024-06-07T16:47:15.5526423Z #10 2.332 npm warn deprecated formidable@1.0.14: Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau
+2024-06-07T16:47:15.6429552Z #10 2.573 npm warn deprecated sinon@1.8.2: 16.1.1
+2024-06-07T16:47:15.9944921Z #10 2.924 
+2024-06-07T16:47:15.9945744Z #10 2.924 added 208 packages, and audited 209 packages in 3s
+2024-06-07T16:47:16.1389663Z #10 2.924 
+2024-06-07T16:47:16.1391350Z #10 2.924 20 packages are looking for funding
+2024-06-07T16:47:16.1392381Z #10 2.925   run `npm fund` for details
+2024-06-07T16:47:16.1394160Z #10 2.937 
+2024-06-07T16:47:16.1395246Z #10 2.937 15 vulnerabilities (4 moderate, 8 high, 3 critical)
+2024-06-07T16:47:16.1397346Z #10 2.937 
+2024-06-07T16:47:16.1398184Z #10 2.937 To address all issues (including breaking changes), run:
+2024-06-07T16:47:16.1399572Z #10 2.937   npm audit fix --force
+2024-06-07T16:47:16.1400115Z #10 2.937 
+2024-06-07T16:47:16.1400678Z #10 2.937 Run `npm audit` for details.
+2024-06-07T16:47:16.1401292Z #10 2.938 npm notice
+2024-06-07T16:47:16.1402249Z #10 2.938 npm notice New minor version of npm available! 10.7.0 -> 10.8.1
+2024-06-07T16:47:16.1403380Z #10 2.938 npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.8.1
+2024-06-07T16:47:16.1404205Z #10 2.938 npm notice To update run: npm install -g npm@10.8.1
+2024-06-07T16:47:16.1404832Z #10 2.938 npm notice
+2024-06-07T16:47:16.1405486Z #10 DONE 3.1s
+2024-06-07T16:47:16.3695284Z 
+2024-06-07T16:47:16.3695855Z #11 [5/5] COPY . .
+2024-06-07T16:47:16.3696753Z #11 DONE 0.1s
+2024-06-07T16:47:16.3697047Z 
+2024-06-07T16:47:16.3697306Z #12 exporting to image
+2024-06-07T16:47:16.3698013Z #12 exporting layers
+2024-06-07T16:47:17.6922721Z #12 exporting layers 1.5s done
+2024-06-07T16:47:17.8760708Z #12 ...
+2024-06-07T16:47:17.8761190Z 
+2024-06-07T16:47:17.8762207Z #13 [auth] ***/api:pull,push token for registry-1.docker.io
+2024-06-07T16:47:17.8763292Z #13 DONE 0.0s
+2024-06-07T16:47:17.8763829Z 
+2024-06-07T16:47:17.8764131Z #12 exporting to image
+2024-06-07T16:47:17.8765244Z #12 exporting manifest sha256:f2e9ef8ab72bbb08c3e4f7d0c0bff2c394380271ef6fa458a6fdeb4ccc3b6f14 done
+2024-06-07T16:47:17.8766561Z #12 exporting config sha256:8c295845e74dfba61f84b01c8ec200070f3e2e52f1728ad7cb62f11dcc162eec done
+2024-06-07T16:47:17.8768281Z #12 exporting attestation manifest sha256:fab61f1fd08ea017300454c1c9f03883cd68f1a3f6a1b03c384d6130b8afa7e3 done
+2024-06-07T16:47:17.8769776Z #12 exporting manifest list sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a done
+2024-06-07T16:47:17.8770718Z #12 pushing layers
+2024-06-07T16:47:19.5865608Z #12 pushing layers 1.9s done
+2024-06-07T16:47:19.5867420Z #12 pushing manifest for docker.io/***/api:v1.0.0@sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a
+2024-06-07T16:47:20.1747563Z #12 pushing manifest for docker.io/***/api:v1.0.0@sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a 0.6s done
+2024-06-07T16:47:20.5652388Z #12 pushing layers 0.4s done
+2024-06-07T16:47:20.5653556Z #12 pushing manifest for docker.io/***/api:latest@sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a
+2024-06-07T16:47:20.9594919Z #12 pushing manifest for docker.io/***/api:latest@sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a 0.4s done
+2024-06-07T16:47:20.9596932Z #12 DONE 4.7s
+2024-06-07T16:47:21.1430029Z 
+2024-06-07T16:47:21.1430939Z #14 exporting to GitHub Actions Cache
+2024-06-07T16:47:21.1431827Z #14 preparing build cache for export
+2024-06-07T16:47:21.1432794Z #14 writing layer sha256:22a81a0f8d1c30ce5a5da3579a84ab4c22fd2f14cb33863c1a752da6f056dc18
+2024-06-07T16:47:21.3335993Z #14 writing layer sha256:22a81a0f8d1c30ce5a5da3579a84ab4c22fd2f14cb33863c1a752da6f056dc18 0.3s done
+2024-06-07T16:47:21.4972223Z #14 writing layer sha256:4f25ceb4496247b9d4873e86285fa1fba600dc68b01b43943c54beffc0e12a76
+2024-06-07T16:47:22.7120701Z #14 writing layer sha256:4f25ceb4496247b9d4873e86285fa1fba600dc68b01b43943c54beffc0e12a76 1.4s done
+2024-06-07T16:47:22.8281947Z #14 writing layer sha256:63d4919b4bd81ff07e6f1907b1cac9c8c878a082b996e6f562cfcae70d427053 0.1s done
+2024-06-07T16:47:22.9434244Z #14 writing layer sha256:ade7634df8a9f8c3103b6e9cf1076a0fc67c115410ee142f3239972bf025b35c 0.1s done
+2024-06-07T16:47:22.9436198Z #14 writing layer sha256:bd06542006fda4279cb2edd761a84311c1fdbb90554e9feaaf078a3674845742
+2024-06-07T16:47:23.0450317Z #14 writing layer sha256:bd06542006fda4279cb2edd761a84311c1fdbb90554e9feaaf078a3674845742 0.1s done
+2024-06-07T16:47:23.0452051Z #14 writing layer sha256:d25f557d7f31bf7acfac935859b5153da41d13c41f2b468d16f729a5b883634f
+2024-06-07T16:47:23.5200101Z #14 writing layer sha256:d25f557d7f31bf7acfac935859b5153da41d13c41f2b468d16f729a5b883634f 0.5s done
+2024-06-07T16:47:23.6272773Z #14 writing layer sha256:dedd879217eaff36d66e5f6b9a050cf6be180d3fc95c9acfc26010411297e369 0.1s done
+2024-06-07T16:47:23.7901063Z #14 writing layer sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710
+2024-06-07T16:47:26.2318379Z #14 writing layer sha256:f6124930634921d33d69a1a8b5848cb40d0b269e79b4c37c236cb5e4d61a2710 2.6s done
+2024-06-07T16:47:26.3547616Z #14 preparing build cache for export 5.4s done
+2024-06-07T16:47:26.3549883Z #14 DONE 5.4s
+2024-06-07T16:47:26.3550370Z 
+2024-06-07T16:47:26.3550899Z #15 resolving provenance for metadata file
+2024-06-07T16:47:26.3590685Z #15 DONE 0.0s
+2024-06-07T16:47:26.3655172Z ##[group]ImageID
+2024-06-07T16:47:26.3655805Z sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a
+2024-06-07T16:47:26.3657360Z ##[endgroup]
+2024-06-07T16:47:26.3658188Z ##[group]Digest
+2024-06-07T16:47:26.3659057Z sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a
+2024-06-07T16:47:26.3660414Z ##[endgroup]
+2024-06-07T16:47:26.3661095Z ##[group]Metadata
+2024-06-07T16:47:26.3661644Z {
+2024-06-07T16:47:26.3662103Z   "buildx.build.provenance": {
+2024-06-07T16:47:26.3662718Z     "buildType": "https://mobyproject.org/buildkit@v1",
+2024-06-07T16:47:26.3663223Z     "materials": [
+2024-06-07T16:47:26.3663637Z       {
+2024-06-07T16:47:26.3664300Z         "uri": "pkg:docker/node@18-alpine?platform=linux%2Famd64",
+2024-06-07T16:47:26.3664848Z         "digest": {
+2024-06-07T16:47:26.3665459Z           "sha256": "cf350f8bb497d82471f1f735df5d6d3321138be3b9f7f84ad10a4b86a438bbc3"
+2024-06-07T16:47:26.3666057Z         }
+2024-06-07T16:47:26.3666376Z       }
+2024-06-07T16:47:26.3666966Z     ],
+2024-06-07T16:47:26.3667315Z     "invocation": {
+2024-06-07T16:47:26.3667638Z       "configSource": {},
+2024-06-07T16:47:26.3668099Z       "parameters": {
+2024-06-07T16:47:26.3668495Z         "frontend": "dockerfile.v0",
+2024-06-07T16:47:26.3668907Z         "locals": [
+2024-06-07T16:47:26.3669322Z           {
+2024-06-07T16:47:26.3669619Z             "name": "context"
+2024-06-07T16:47:26.3669989Z           },
+2024-06-07T16:47:26.3670386Z           {
+2024-06-07T16:47:26.3670710Z             "name": "dockerfile"
+2024-06-07T16:47:26.3671151Z           }
+2024-06-07T16:47:26.3671437Z         ]
+2024-06-07T16:47:26.3671731Z       },
+2024-06-07T16:47:26.3672118Z       "environment": {
+2024-06-07T16:47:26.3672514Z         "platform": "linux/amd64"
+2024-06-07T16:47:26.3672866Z       }
+2024-06-07T16:47:26.3673240Z     }
+2024-06-07T16:47:26.3673529Z   },
+2024-06-07T16:47:26.3674477Z   "buildx.build.ref": "builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4/builder-5ee66ac9-df43-4749-b58e-ac16a5377ca40/p6ri50w46o453i8kow1apc9g8",
+2024-06-07T16:47:26.3675477Z   "containerimage.descriptor": {
+2024-06-07T16:47:26.3676377Z     "mediaType": "application/vnd.oci.image.index.v1+json",
+2024-06-07T16:47:26.3677093Z     "digest": "sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a",
+2024-06-07T16:47:26.3677814Z     "size": 856
+2024-06-07T16:47:26.3678137Z   },
+2024-06-07T16:47:26.3678760Z   "containerimage.digest": "sha256:d18bbdc96124070a612e813fd4d1baad616c5571a43761cc7cd175f4865bd02a",
+2024-06-07T16:47:26.3679863Z   "image.name": "***/api:v1.0.0,***/api:latest"
+2024-06-07T16:47:26.3680541Z }
+2024-06-07T16:47:26.3681508Z ##[endgroup]
+2024-06-07T16:47:26.3806228Z Post job cleanup.
+2024-06-07T16:47:26.5298544Z ##[group]Removing temp folder /tmp/docker-actions-toolkit-Z6thSX
+2024-06-07T16:47:26.5317414Z ##[endgroup]
+2024-06-07T16:47:26.5441543Z Post job cleanup.
+2024-06-07T16:47:26.6984807Z ##[group]Removing builder
+2024-06-07T16:47:26.8150364Z [command]/usr/bin/docker buildx rm builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4
+2024-06-07T16:47:27.3059626Z builder-5ee66ac9-df43-4749-b58e-ac16a5377ca4 removed
+2024-06-07T16:47:27.3092296Z ##[endgroup]
+2024-06-07T16:47:27.3093533Z ##[group]Cleaning up certificates
+2024-06-07T16:47:27.3099817Z ##[endgroup]
+2024-06-07T16:47:27.3238458Z Post job cleanup.
+2024-06-07T16:47:27.4389569Z [command]/usr/bin/docker logout 
+2024-06-07T16:47:27.4514330Z Removing login credentials for https://index.docker.io/v1/
+2024-06-07T16:47:27.4647539Z Post job cleanup.
+2024-06-07T16:47:27.5516859Z [command]/usr/bin/git version
+2024-06-07T16:47:27.5565482Z git version 2.45.2
+2024-06-07T16:47:27.5604363Z Temporarily overriding HOME='/home/runner/work/_temp/4950a80e-f909-404f-a5ad-6a2abd5c9b11' before making global git config changes
+2024-06-07T16:47:27.5606299Z Adding repository directory to the temporary git global config as a safe directory
+2024-06-07T16:47:27.5610334Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VDT2024-api/VDT2024-api
+2024-06-07T16:47:27.5651777Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-06-07T16:47:27.5690360Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-06-07T16:47:27.5943287Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-06-07T16:47:27.5974004Z http.https://github.com/.extraheader
+2024-06-07T16:47:27.5985447Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-06-07T16:47:27.6025688Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-06-07T16:47:27.6490124Z Cleaning up orphan processes
