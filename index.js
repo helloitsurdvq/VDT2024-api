@@ -14,8 +14,10 @@ if(process.env.NODE_ENV !== 'test') {
   app.use(morgan('combined')); //'combined' outputs the Apache style LOGs
 }
 
-const traineeRouter = require("./routes/traineeRoute")
+const traineeRouter = require("./routes/traineeRoute");
+const authRoute = require('./routes/authRoute');
 app.use("/api/trainee", traineeRouter)
+app.use("/api/auth", authRoute)
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}`);
