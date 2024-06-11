@@ -1,3 +1,4 @@
+### Endpoint rate limitation
 To implement rate limiting for the api service, the `express-rate-limit` are used. This middleware allows to set up rate limiting rules easily.
 
 ```shell
