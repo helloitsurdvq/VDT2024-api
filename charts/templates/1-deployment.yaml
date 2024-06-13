@@ -24,9 +24,6 @@ spec:
             containerPort: {{ .Values.port }}
           - name: http-metrics
             containerPort: {{ .Values.port }}
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.configmap.name }}
         env:
         - name: MONGODB_URI
           value: "mongodb+srv://root:hello123@vdt.2w2zlck.mongodb.net/?retryWrites=true&w=majority&appName=vdt"
