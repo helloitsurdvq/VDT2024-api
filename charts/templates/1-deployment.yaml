@@ -16,7 +16,7 @@ spec:
         app: {{ .Values.appName }}
     spec: 
       containers:
-      - name: mycontainer
+      - name: dvq1601-api
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         ports:
