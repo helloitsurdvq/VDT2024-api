@@ -1,7 +1,5 @@
 appName: api
 
-port: 3000
-
 namespace: api
 
 configmap:
@@ -13,5 +11,5 @@ image:
   repository: helloitsurdvq/api
   tag: latest
 
-service:
-  nodePort: 30081
+# service:
+#   nodePort: 30081
