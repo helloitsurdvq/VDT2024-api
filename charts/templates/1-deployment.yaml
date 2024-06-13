@@ -1,36 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}
+  name: {{ .Chart.Name }}
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Values.appName }}
+    app: {{ .Chart.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}
+        app: {{ .Chart.Name }}
     spec: 
       containers:
         name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        imagePullPolicy: Always
         ports:
-          - name: http
-            containerPort: {{ .Values.port }}
-          - name: http-metrics
-            containerPort: {{ .Values.port }}
+        - containerPort: 3000
         env:
         - name: MONGODB_URI
           value: "mongodb+srv://root:hello123@vdt.2w2zlck.mongodb.net/?retryWrites=true&w=majority&appName=vdt"
-        resources:
-          requests:
-            memory: "16Mi" 
-            cpu: "50m"
-          limits:
-            memory: "128Mi" 
-            cpu: "100m"
