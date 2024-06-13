@@ -1,5 +1,11 @@
 ### Endpoint rate limitation
-To implement rate limiting for the api service, the `express-rate-limit` are used. This middleware allows to set up rate limiting rules easily.
+To implement rate limiting strategy for the api service, the `express-rate-limit` are used. This package primarily uses implementation that can be considered as a combination of the **token bucket** and **leaky bucket** algorithms. It provides the following features:
+
+- *Fixed Window Counter*: tracks the number of requests in a fixed time window (e.g., 1 minute). When the window expires, the count resets.
+- *Sliding Window Counter*: can be configured to track requests in a sliding window, providing a more dynamic view of the request rate.
+- *Burst Handling*: by setting the 'max' value, the middleware can handle bursts of traffic up to the specified limit within the given time window (windowMs).
+
+This middleware allows to set up rate limiting rules easily, helps to ensure that the application can handle a high volume of requests without getting overwhelmed.
 
 ```shell
 # Install package
