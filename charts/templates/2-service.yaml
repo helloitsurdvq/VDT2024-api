@@ -9,7 +9,7 @@ spec:
   ports:
   - port: {{ .Values.port }}
     protocol: TCP
-    name: nodeJS
+    name: nodejs
   selector:
     app: {{ .Values.appName }}
   type: NodePort
