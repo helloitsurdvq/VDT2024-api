@@ -12,7 +12,7 @@ spec:
       - {{ .Values.namespace }}
   selector:
     matchLabels:
-      app: myweb-monitoring
+      app: api
   endpoints:
     - port: http-metrics
       path: /metrics
