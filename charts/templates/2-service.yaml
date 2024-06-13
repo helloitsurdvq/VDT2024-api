@@ -8,6 +8,7 @@ metadata:
 spec:
   ports:
   - port: {{ .Values.port }}
+    targetPort: 3000
     protocol: TCP
     name: nodejs
   selector:
