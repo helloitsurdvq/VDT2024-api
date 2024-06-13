@@ -14,15 +14,15 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
-    spec: 
+    spec:
       containers:
-        name: {{ .Chart.Name }}
+      - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
-          - name: http
-            containerPort: 3000
-          - name: http-metrics
-            containerPort: 3000
+        - name: http
+          containerPort: 3000
+        - name: http-metrics
+          containerPort: 3000
         env:
         - name: MONGODB_URI
           value: "mongodb+srv://root:hello123@vdt.2w2zlck.mongodb.net/?retryWrites=true&w=majority&appName=vdt"
