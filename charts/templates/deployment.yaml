@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
-  namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Chart.Name }}
 spec:
@@ -14,9 +13,9 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
-    spec: 
+    spec:
       containers:
-        name: {{ .Chart.Name }}
+      - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
         - containerPort: 3000
