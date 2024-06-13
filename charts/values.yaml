@@ -1,6 +1,17 @@
+appName: api
+
+port: 3000
+
+namespace: api
+
+configmap:
+  name: myhelmapp-configmap-v1
+  data:
+    CUSTOM_HEADER: 'This app was deployed with helm!'
+
 image:
   repository: helloitsurdvq/api
   tag: latest
 
-service:
-  nodePort: 30081
+# service:
+#   nodePort: 30081
